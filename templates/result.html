@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}?v=1.0"> <!-- 引入 CSS 文件 -->
+</head>
+<body>
+    <h1>預測結果</h1>
+    <p>表情為：{{ emotion }}，信心：{{ confidence }}%</p>
+    <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded Image" class="uploaded-image">
+    <br>
+    <a href="{{ url_for('upload_file') }}" class="button">返回上傳頁面</a> 
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script> <!-- 引入 JavaScript 文件 -->
+</body>
+</html>

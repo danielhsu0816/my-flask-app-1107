@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    color: #007bff;                          /* 標題顏色 */
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.button {
+    display: inline-block;                      /* 使按鈕為行內區塊 */
+    padding: 10px 20px;                         /* 按鈕內邊距 */
+    margin: 10px 5px;                           /* 按鈕外邊距 */
+    border: none;                               /* 無邊框 */
+    border-radius: 5px;                         /* 圓角 */
+    background-color: #007bff;                /* 按鈕背景色 */
+    color: white;                             /* 文字顏色 */
+    text-align: center;                         /* 文字置中 */
+    text-decoration: none;                      /* 無下劃線 */
+    font-size: 16px;                            /* 字體大小 */
+    transition: background-color 0.3s ease;     /* 背景色變化效果 */
+}
+
+.button:hover {
+    background-color: #0056b3;                /* 滑鼠懸停時變色 */
+}
+
+.uploaded-image {
+    max-width: 300px;                           /* 設定最大寬度 */
+    height: auto;                               /* 自動高度以保持比例 */
+    display: block;                             /* 設置為區塊以便於居中對齊 */
+    margin: 20px auto;                          /* 上下邊距 20px，左右自動居中 */
+    border-radius: 5px;                         /* 圓角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加陰影效果 */
+}
+
+.dialog {                                       /* 對話框的樣式 */
+    display: none;                              /* 默認隱藏 */
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;                         /* 背景顏色 */
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 10px;                        /* 圓角 */
+    max-width: 400px;                           /* 最大寬度 */
+    width: 90%;                                 /* 寬度 */
+}
+ 
+.dialog .close {                                /* 關閉按鈕樣式 */
+    cursor: pointer;
+    color: #fff;
+    background: #ff4d4d;                      /* 關閉按鈕顏色 */
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;                         /* 圓角 */
+    position: absolute;                         /* 位置絕對 */
+    right: 10px;                                /* 右側距離 */
+    top: 10px;                                  /* 上方距離 */
+}
+
+#dialog-message {                               /* 對話框內的訊息樣式 */
+    margin-top: 30px;                           /* 上方距離 */
+    color: #333;                              /* 文字顏色 */
+}
+
+.overlay {                                      /* 遮罩層樣式 */
+    display: none;                              /* 默認隱藏 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);           /* 半透明背景 */
+    z-index: 999;                               /* 在對話框下方 */
+}

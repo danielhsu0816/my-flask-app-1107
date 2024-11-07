@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}?v=1.0"> <!-- 引入 CSS 文件 -->
+</head>
+<body>
+    <h1>上傳圖片進行情感辨識</h1>
+    <form method="post" enctype="multipart/form-data" >
+        <!-- <input type="file" name="file" accept="image/*" required> -->
+         <!-- 預設的 required 會有預設的樣式，因為此範例使用了自製的對話框，所以拿掉預設的改成自己寫的js來判斷 -->
+        <input type="file" name="file" accept="image/*" >
+        <input type="submit" value="上傳">
+    </form>
+
+    <!-- 遮罩層 -->
+    <div id="overlay" class="overlay" onclick="closeDialog()"></div>
+
+    <!-- 自製對話框 -->
+    <div id="dialog" class="dialog">
+        <button class="close" onclick="closeDialog()">✖</button>
+        <p id="dialog-message"></p>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script> <!-- 引入 JavaScript 文件 -->
+</body>
+</html>
+
+<!-- <form method="post" action="/upload" enctype="multipart/form-data" onsubmit="return validateFile();">
+    <input type="file" name="file" accept="image/*" required>
+    <input type="submit" value="上傳">
+</form> -->
+
+<!-- method="post": 表示這個表單使用 HTTP POST 方法提交資料。這是上傳檔案時的標準做法，因為 POST 方法可以處理大量的數據（如檔案）。
+
+enctype="multipart/form-data": 此屬性指定了表單的編碼方式。對於檔案上傳，必須使用 multipart/form-data，這樣表單資料就可以包含檔案。
+
+action (默認為當前頁面): 當表單提交時，會將資料發送到表單所在的 URL。若不指定 action，則會自動發送到當前 URL，即這裡的根路由 /。
+
+accept="image/*": 這個屬性限制了用戶可以上傳的檔案類型，只允許選擇圖片檔案。 -->
